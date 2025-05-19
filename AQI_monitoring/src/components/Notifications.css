@@ -1,0 +1,52 @@
+/* src/components/Notifications.css */
+.notifications-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .notifications-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .notifications-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .notifications-container .unread {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .notifications-container .read {
+    background-color: #fff;
+  }
+  
+  .notifications-container .threshold-alert {
+    border-left: 4px solid #ff4500; /* Orange-red border for threshold alerts */
+  }
+  
+  .notification-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .notification-actions button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .notification-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 5px;
+  }

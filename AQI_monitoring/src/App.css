@@ -1,0 +1,267 @@
+/* App.css */
+
+/* Sidebar styles */
+.sidebar {
+  width: 60px;
+  height: 100vh;
+  background: #2c3e50;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+/* Content wrapper for all routed components */
+.content-wrapper {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Apply margin only when sidebar is present */
+.content-wrapper.with-sidebar {
+  margin-left: 60px;
+}
+
+/* Updated #map styles */
+#map {
+  height: 100vh;
+}
+
+/* Updated .content-container styles */
+.content-container {
+  padding: 20px;
+}
+
+/* Navigation link styles */
+.nav-link {
+  color: #ecf0f1;
+  font-size: 24px;
+  margin: 15px 0;
+  padding: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: #3498db;
+  transform: scale(1.1);
+}
+
+/* User section in sidebar - renamed from profile-container */
+.sidebar-user-section {
+  margin-bottom: 25px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* User icon - renamed from profile-icon */
+.user-icon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #34495e;
+  border: 2px solid #ecf0f1;
+  transition: all 0.3s ease;
+}
+
+.user-icon:hover {
+  background: #3498db;
+  transform: scale(1.1);
+}
+
+/* User menu - renamed from profile-popup */
+.user-menu {
+  position: absolute;
+  top: 48px;
+  left: 70px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  width: 200px;
+  padding: 10px 0;
+  z-index: 1001;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: menuFadeIn 0.2s ease forwards;
+}
+
+/* Triangle pointer for popup */
+.user-menu::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #ffffff;
+}
+
+@keyframes menuFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Menu item - renamed from popup-item */
+.menu-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.menu-item:hover {
+  background: #f1f3f4;
+}
+
+.menu-item.logout-btn {
+  color: #e74c3c;
+  border-top: 1px solid #f1f1f1;
+  margin-top: 5px;
+  padding-top: 12px;
+}
+
+.menu-item.logout-btn:hover {
+  background: #fce8e6;
+}
+
+.user-menu .menu-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.user-menu .menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+.menu-item.logout-btn {
+  color: #dc3545;
+  border-top: 1px solid #eee;
+}
+
+.menu-item[to="/feedback"] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu-item[to="/feedback"]::before {
+  content: "★";
+  font-size: 1rem;
+}
+
+/* Button link styles (Login/Register) */
+.button-link {
+  text-decoration: none;
+  background-color: #1a4b8c;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.button-link.register-btn {
+  font-size: 12px;
+  background-color: #28a745;
+}
+
+.logout-btn:not(.menu-item) {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 50px;
+  margin: 10px 0;
+}
+
+.logout-btn:hover, .button-link:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Active link styles */
+.nav-link.active {
+  color: #3498db;
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background-color: #3498db;
+}
+
+/* Body and global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Permission error message */
+.permission-error {
+  padding: 20px;
+  color: red;
+  font-size: 18px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}

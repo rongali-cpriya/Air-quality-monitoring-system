@@ -1,0 +1,70 @@
+{
+    "location": "New York, USA",
+    "date": "Friday, February 10",
+    "condition": "Cloudy",
+    "temperature": {
+      "current": 27,
+      "realFeel": 28,
+      "realFeelShade": 26,
+      "uvIndex": 5,
+      "uvCategory": "Moderate"
+    },
+    "wind": {
+      "speed": "NNW 7 km/h",
+      "gusts": "22 km/h"
+    },
+    "precipitation": {
+      "probability": 4,
+      "thunderstorms": 0,
+      "amount": "0.0 mm",
+      "cloudCover": 5
+    },
+    "dailyForecast": [
+      {
+        "time": "Morning",
+        "temperature": 13,
+        "realFeel": 14,
+        "condition": "Clear"
+      },
+      {
+        "time": "Afternoon",
+        "temperature": 27,
+        "realFeel": 28,
+        "condition": "Hazy Sunshine"
+      },
+      {
+        "time": "Evening",
+        "temperature": 18,
+        "realFeel": 19,
+        "condition": "Partly Cloudy"
+      },
+      {
+        "time": "Overnight",
+        "temperature": 12,
+        "realFeel": 13,
+        "condition": "Clear"
+      }
+    ],
+    "sunMoon": {
+      "daylight": "11 hrs 10 mins",
+      "sunrise": "6:03 AM",
+      "sunset": "5:13 PM",
+      "moonPhase": "Waxing Gibbous",
+      "moonrise": "3:03 PM",
+      "moonset": "5:15 AM"
+    },
+    "temperatureHistory": {
+      "today": {
+        "high": 27,
+        "low": 13
+      },
+      "average": {
+        "high": 25,
+        "low": 12
+      },
+      "lastYear": {
+        "high": 27,
+        "low": 9
+      }
+    }
+  }

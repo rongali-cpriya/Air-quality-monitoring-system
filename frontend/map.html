@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Air Quality Index Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #87CEEB; /* Default background (sky blue) */
+      color: #333;
+      transition: background-color 0.5s ease;
+    }
+    .sidebar {
+      width: 60px;
+      height: 100vh;
+      background: #333;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      margin: 20px 0;
+      transition: color 0.3s ease;
+    }
+    .sidebar a:hover {
+      color: #87CEEB;
+    }
+    .login-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .login-btn:hover {
+      background: #87CEEB;
+    }
+    #map {
+      height: 100vh;
+      width: 100%;
+      margin-left: 60px; /* Adjust for sidebar */
+    }
+    .aqi-popup {
+      padding: 5px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="map.html" title="Map"><i class="fas fa-map"></i></a>
+    <a href="weather-details.html" title="Weather Details"><i class="fas fa-cloud-sun"></i></a>
+  </div>
+
+  <!-- Login Button -->
+  <button class="login-btn" onclick="login()">Login</button>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([20, 0], 2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const aqiData = [
+      { country: 'USA', latlng: [37.0902, -95.7129], aqi: 45, pollution: 'Low' },
+      { country: 'China', latlng: [35.8617, 104.1954], aqi: 150, pollution: 'Unhealthy' },
+      { country: 'India', latlng: [20.5937, 78.9629], aqi: 200, pollution: 'Very Unhealthy' },
+      { country: 'Germany', latlng: [51.1657, 10.4515], aqi: 60, pollution: 'Moderate' },
+      { country: 'Brazil', latlng: [-14.2350, -51.9253], aqi: 80, pollution: 'Moderate' },
+      { country: 'Japan', latlng: [36.2048, 138.2529], aqi: 40, pollution: 'Good' },
+      { country: 'Australia', latlng: [-25.2744, 133.7751], aqi: 20, pollution: 'Good' },
+      { country: 'Canada', latlng: [56.1304, -106.3468], aqi: 30, pollution: 'Good' },
+      { country: 'France', latlng: [46.6035, 1.8883], aqi: 55, pollution: 'Moderate' },
+      { country: 'United Kingdom', latlng: [55.3781, -3.4360], aqi: 50, pollution: 'Moderate' },
+      { country: 'Russia', latlng: [61.5240, 105.3188], aqi: 90, pollution: 'Moderate' },
+      { country: 'South Africa', latlng: [-30.5595, 22.9375], aqi: 120, pollution: 'Unhealthy for Sensitive Groups' },
+      { country: 'Mexico', latlng: [23.6345, -102.5528], aqi: 110, pollution: 'Unhealthy for Sensitive Groups' },
+      { country: 'Italy', latlng: [41.8719, 12.5674], aqi: 70, pollution: 'Moderate' },
+      { country: 'Spain', latlng: [40.4637, -3.7492], aqi: 65, pollution: 'Moderate' },
+      { country: 'Argentina', latlng: [-38.4161, -63.6167], aqi: 85, pollution: 'Moderate' },
+      { country: 'Saudi Arabia', latlng: [23.8859, 45.0792], aqi: 130, pollution: 'Unhealthy for Sensitive Groups' },
+      { country: 'South Korea', latlng: [35.9078, 127.7669], aqi: 75, pollution: 'Moderate' },
+      { country: 'Turkey', latlng: [38.9637, 35.2433], aqi: 100, pollution: 'Moderate' },
+      { country: 'Indonesia', latlng: [-0.7893, 113.9213], aqi: 160, pollution: 'Unhealthy' }
+    ];
+
+    function getAqiColor(aqi) {
+      if (aqi <= 50) return 'green';
+      if (aqi <= 100) return 'yellow';
+      if (aqi <= 150) return 'orange';
+      if (aqi <= 200) return 'red';
+      if (aqi <= 300) return 'purple';
+      return 'maroon';
+    }
+
+    aqiData.forEach(data => {
+      const { latlng, aqi } = data;
+      const popupContent = `<div class='aqi-popup' style='background: ${getAqiColor(aqi)}; color: black;'>${aqi}</div>`;
+      L.marker(latlng).addTo(map).bindPopup(popupContent, { closeButton: false });
+    });
+
+    // Function to handle login button click
+    function login() {
+      alert('Login functionality coming soon!');
+    }
+  </script>
+</body>
+</html>

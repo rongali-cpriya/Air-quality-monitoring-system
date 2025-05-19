@@ -1,0 +1,111 @@
+StationId,StationName,City,State,Latitude,Longitude
+AP001,"Secretariat, Amaravati - APPCB",Amaravati,Andhra Pradesh,16.5062,80.648
+AP005,"GVM Corporation, Visakhapatnam - APPCB",Visakhapatnam,Andhra Pradesh,17.6868,83.2185
+AS001,"Railway Colony, Guwahati - APCB",Guwahati,Assam,26.182,91.75
+BR005,"DRM Office Danapur, Patna - BSPCB",Patna,Bihar,25.582,85.046
+BR006,"Govt. High School Shikarpur, Patna - BSPCB",Patna,Bihar,25.5941,85.1376
+BR007,"IGSC Planetarium Complex, Patna - BSPCB",Patna,Bihar,25.615,85.148
+BR008,"Muradpur, Patna - BSPCB",Patna,Bihar,25.617,85.133
+BR009,"Rajbansi Nagar, Patna - BSPCB",Patna,Bihar,25.6,85.16
+BR010,"Samanpura, Patna - BSPCB",Patna,Bihar,25.583,85.083
+CH001,"Sector-25, Chandigarh - CPCC",Chandigarh,Chandigarh,30.729,76.768
+DL001,"Alipur, Delhi - DPCC",Delhi,Delhi,28.815,77.153
+DL002,"Anand Vihar, Delhi - DPCC",Delhi,Delhi,28.65,77.315
+DL003,"Ashok Vihar, Delhi - DPCC",Delhi,Delhi,28.688,77.176
+DL004,"Aya Nagar, Delhi - IMD",Delhi,Delhi,28.47,77.133
+DL005,"Bawana, Delhi - DPCC",Delhi,Delhi,28.8,77.033
+DL006,"Burari Crossing, Delhi - IMD",Delhi,Delhi,28.725,77.2
+DL007,"CRRI Mathura Road, Delhi - IMD",Delhi,Delhi,28.55,77.273
+DL008,"DTU, Delhi - CPCB",Delhi,Delhi,28.75,77.117
+DL009,"Dr. Karni Singh Shooting Range, Delhi - DPCC",Delhi,Delhi,28.5,77.267
+DL010,"Dwarka-Sector 8, Delhi - DPCC",Delhi,Delhi,28.57,77.067
+DL011,"East Arjun Nagar, Delhi - CPCB",Delhi,Delhi,28.65,77.283
+DL012,"IGI Airport (T3), Delhi - IMD",Delhi,Delhi,28.556,77.1
+DL013,"IHBAS, Dilshad Garden, Delhi - CPCB",Delhi,Delhi,28.683,77.305
+DL014,"ITO, Delhi - CPCB",Delhi,Delhi,28.628,77.247
+DL015,"Jahangirpuri, Delhi - DPCC",Delhi,Delhi,28.725,77.167
+DL016,"Jawaharlal Nehru Stadium, Delhi - DPCC",Delhi,Delhi,28.583,77.233
+DL017,"Lodhi Road, Delhi - IMD",Delhi,Delhi,28.591,77.227
+DL018,"Major Dhyan Chand National Stadium, Delhi - DPCC",Delhi,Delhi,28.612,77.237
+DL019,"Mandir Marg, Delhi - DPCC",Delhi,Delhi,28.636,77.2
+DL020,"Mundka, Delhi - DPCC",Delhi,Delhi,28.683,77.017
+DL021,"NSIT Dwarka, Delhi - CPCB",Delhi,Delhi,28.61,77.033
+DL022,"Najafgarh, Delhi - DPCC",Delhi,Delhi,28.612,76.983
+DL023,"Narela, Delhi - DPCC",Delhi,Delhi,28.852,77.093
+DL024,"Nehru Nagar, Delhi - DPCC",Delhi,Delhi,28.567,77.25
+DL025,"North Campus, DU, Delhi - IMD",Delhi,Delhi,28.685,77.21
+DL026,"Okhla Phase-2, Delhi - DPCC",Delhi,Delhi,28.533,77.273
+DL027,"Patparganj, Delhi - DPCC",Delhi,Delhi,28.633,77.3
+DL028,"Punjabi Bagh, Delhi - DPCC",Delhi,Delhi,28.667,77.133
+DL029,"Pusa, Delhi - DPCC",Delhi,Delhi,28.637,77.167
+DL030,"Pusa, Delhi - IMD",Delhi,Delhi,28.637,77.167
+DL031,"R K Puram, Delhi - DPCC",Delhi,Delhi,28.563,77.183
+DL032,"Rohini, Delhi - DPCC",Delhi,Delhi,28.733,77.117
+DL033,"Shadipur, Delhi - CPCB",Delhi,Delhi,28.65,77.157
+DL034,"Sirifort, Delhi - CPCB",Delhi,Delhi,28.55,77.217
+DL035,"Sonia Vihar, Delhi - DPCC",Delhi,Delhi,28.717,77.25
+DL036,"Sri Aurobindo Marg, Delhi - DPCC",Delhi,Delhi,28.558,77.2
+DL037,"Vivek Vihar, Delhi - DPCC",Delhi,Delhi,28.672,77.317
+DL038,"Wazirpur, Delhi - DPCC",Delhi,Delhi,28.7,77.167
+GJ001,"Maninagar, Ahmedabad - GPCB",Ahmedabad,Gujarat,23.0,72.6
+HR011,"NISE Gwal Pahari, Gurugram - IMD",Gurugram,Haryana,28.433,77.15
+HR012,"Sector-51, Gurugram - HSPCB",Gurugram,Haryana,28.417,77.067
+HR013,"Teri Gram, Gurugram - HSPCB",Gurugram,Haryana,28.45,77.033
+HR014,"Vikas Sadan, Gurugram - HSPCB",Gurugram,Haryana,28.467,77.033
+JH001,"Tata Stadium, Jorapokhar - JSPCB",Jorapokhar,Jharkhand,23.717,86.417
+KA002,"BTM Layout, Bengaluru - CPCB",Bengaluru,Karnataka,12.917,77.617
+KA003,"BWSSB Kadabesanahalli, Bengaluru - CPCB",Bengaluru,Karnataka,12.933,77.683
+KA004,"Bapuji Nagar, Bengaluru - KSPCB",Bengaluru,Karnataka,12.95,77.533
+KA005,"City Railway Station, Bengaluru - KSPCB",Bengaluru,Karnataka,12.975,77.567
+KA006,"Hebbal, Bengaluru - KSPCB",Bengaluru,Karnataka,13.033,77.583
+KA007,"Hombegowda Nagar, Bengaluru - KSPCB",Bengaluru,Karnataka,12.933,77.6
+KA008,"Jayanagar 5th Block, Bengaluru - KSPCB",Bengaluru,Karnataka,12.917,77.583
+KA009,"Peenya, Bengaluru - CPCB",Bengaluru,Karnataka,13.033,77.517
+KA010,"Sanegurava Halli, Bengaluru - KSPCB",Bengaluru,Karnataka,12.983,77.55
+KA011,"Silk Board, Bengaluru - KSPCB",Bengaluru,Karnataka,12.917,77.633
+KL002,"Kacheripady, Ernakulam - Kerala PCB",Ernakulam,Kerala,9.983,76.283
+KL004,"Vyttila, Kochi - Kerala PCB",Kochi,Kerala,9.967,76.317
+KL007,"Kariavattom, Thiruvananthapuram - Kerala PCB",Thiruvananthapuram,Kerala,8.567,76.883
+KL008,"Plammoodu, Thiruvananthapuram - Kerala PCB",Thiruvananthapuram,Kerala,8.517,76.967
+MP001,"T T Nagar, Bhopal - MPPCB",Bhopal,Madhya Pradesh,23.233,77.4
+MH005,"Bandra, Mumbai - MPCB",Mumbai,Maharashtra,19.067,72.833
+MH006,"Borivali East, Mumbai - MPCB",Mumbai,Maharashtra,19.233,72.85
+MH007,"Chhatrapati Shivaji Intl. Airport (T2), Mumbai - MPCB",Mumbai,Maharashtra,19.1,72.867
+MH008,"Colaba, Mumbai - MPCB",Mumbai,Maharashtra,18.917,72.817
+MH009,"Kurla, Mumbai - MPCB",Mumbai,Maharashtra,19.067,72.883
+MH010,"Powai, Mumbai - MPCB",Mumbai,Maharashtra,19.117,72.917
+MH011,"Sion, Mumbai - MPCB",Mumbai,Maharashtra,19.033,72.867
+MH012,"Vasai West, Mumbai - MPCB",Mumbai,Maharashtra,19.367,72.817
+MH013,"Vile Parle West, Mumbai - MPCB",Mumbai,Maharashtra,19.1,72.833
+MH014,"Worli, Mumbai - MPCB",Mumbai,Maharashtra,19.0,72.817
+ML001,"Lumpyngngad, Shillong - Meghalaya PCB",Shillong,Meghalaya,25.567,91.883
+MZ001,"Sikulpuikawn, Aizawl - Mizoram PCB",Aizawl,Mizoram,23.733,92.717
+OD001,"GM Office, Brajrajnagar - OSPCB",Brajrajnagar,Odisha,21.817,83.917
+OD002,"Talcher Coalfields,Talcher - OSPCB",Talcher,Odisha,20.95,85.233
+PB001,"Golden Temple, Amritsar - PPCB",Amritsar,Punjab,31.617,74.883
+RJ004,"Adarsh Nagar, Jaipur - RSPCB",Jaipur,Rajasthan,26.9,75.833
+RJ005,"Police Commissionerate, Jaipur - RSPCB",Jaipur,Rajasthan,26.917,75.817
+RJ006,"Shastri Nagar, Jaipur - RSPCB",Jaipur,Rajasthan,26.95,75.8
+TN001,"Alandur Bus Depot, Chennai - CPCB",Chennai,Tamil Nadu,13.0,80.2
+TN002,"Manali Village, Chennai - TNPCB",Chennai,Tamil Nadu,13.167,80.267
+TN003,"Manali, Chennai - CPCB",Chennai,Tamil Nadu,13.167,80.267
+TN004,"Velachery Res. Area, Chennai - CPCB",Chennai,Tamil Nadu,12.983,80.217
+TN005,"SIDCO Kurichi, Coimbatore - TNPCB",Coimbatore,Tamil Nadu,10.95,76.967
+TG001,"Bollaram Industrial Area, Hyderabad - TSPCB",Hyderabad,Telangana,17.533,78.35
+TG002,"Central University, Hyderabad - TSPCB",Hyderabad,Telangana,17.467,78.317
+TG003,"ICRISAT Patancheru, Hyderabad - TSPCB",Hyderabad,Telangana,17.517,78.267
+TG004,"IDA Pashamylaram, Hyderabad - TSPCB",Hyderabad,Telangana,17.533,78.233
+TG005,"Sanathnagar, Hyderabad - TSPCB",Hyderabad,Telangana,17.467,78.45
+TG006,"Zoo Park, Hyderabad - TSPCB",Hyderabad,Telangana,17.35,78.45
+UP012,"Central School, Lucknow - CPCB",Lucknow,Uttar Pradesh,26.85,80.95
+UP013,"Gomti Nagar, Lucknow - UPPCB",Lucknow,Uttar Pradesh,26.85,81.0
+UP014,"Lalbagh, Lucknow - CPCB",Lucknow,Uttar Pradesh,26.833,80.917
+UP015,"Nishant Ganj, Lucknow - UPPCB",Lucknow,Uttar Pradesh,26.867,80.933
+UP016,"Talkatora District Industries Center, Lucknow - CPCB",Lucknow,Uttar Pradesh,26.833,80.883
+WB007,"Ballygunge, Kolkata - WBPCB",Kolkata,West Bengal,22.533,88.367
+WB008,"Bidhannagar, Kolkata - WBPCB",Kolkata,West Bengal,22.583,88.417
+WB009,"Fort William, Kolkata - WBPCB",Kolkata,West Bengal,22.55,88.333
+WB010,"Jadavpur, Kolkata - WBPCB",Kolkata,West Bengal,22.5,88.367
+WB011,"Rabindra Bharati University, Kolkata - WBPCB",Kolkata,West Bengal,22.583,88.367
+WB012,"Rabindra Sarobar, Kolkata - WBPCB",Kolkata,West Bengal,22.517,88.367
+WB013,"Victoria, Kolkata - WBPCB",Kolkata,West Bengal,22.55,88.35

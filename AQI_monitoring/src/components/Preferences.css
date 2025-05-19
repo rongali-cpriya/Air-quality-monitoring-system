@@ -1,0 +1,95 @@
+.preferences-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.preferences-list {
+  margin-top: 20px;
+}
+
+.preference-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.preference-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f5f5f5;
+}
+
+.preference-header h3 {
+  margin: 0 10px;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.location-icon {
+  font-size: 16px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #e74c3c; /* Red color for delete */
+  padding: 0 5px;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+}
+
+.preference-details {
+  padding: 10px;
+}
+
+.preference-details p {
+  margin: 5px 0;
+}
+
+.preference-details input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.preference-buttons {
+  margin-top: 10px;
+}
+
+.preference-details button,
+.preference-buttons button {
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.preference-details button:hover,
+.preference-buttons button:hover {
+  background: #0056b3;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}

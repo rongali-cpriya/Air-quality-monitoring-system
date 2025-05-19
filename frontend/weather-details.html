@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #87CEEB; 
+      color: #333;
+      transition: background-color 0.5s ease;
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 60px;
+      height: 100vh;
+      background: #333;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      margin: 20px 0;
+      transition: color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      color: #87CEEB;
+    }
+
+    .login-btn {
+      position: fixed; 
+      top: 20px;
+      right: 20px;
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #87CEEB;
+    }
+
+    .weather-container {
+      max-width: 600px;
+      width: 90%; 
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+      margin-left: 80px; 
+      margin-top: 20px; 
+    }
+
+    .weather-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .weather-header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .weather-header p {
+      margin: 5px 0;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .weather-section {
+      margin-bottom: 20px;
+    }
+
+    .weather-section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .weather-section p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .weather-section .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .weather-section .row span {
+      flex: 1;
+    }
+
+    .weather-section .row span:first-child {
+      font-weight: bold;
+    }
+
+    .weather-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="map.html" title="Map"><i class="fas fa-map"></i></a>
+    <a href="weather-details.html" title="Weather Details"><i class="fas fa-cloud-sun"></i></a>
+  </div>
+
+  <!-- Login Button -->
+  <button class="login-btn" onclick="login()">Login</button>
+
+  <!-- Weather Details Container -->
+  <div class="weather-container">
+    <!-- Weather Header -->
+    <div class="weather-header">
+      <h1 id="location">Loading...</h1>
+      <p id="date">Loading...</p>
+      <div class="weather-icon" id="weather-icon">🌤️</div>
+    </div>
+
+    <!-- Current Weather -->
+    <div class="weather-section">
+      <h2>Current Weather</h2>
+      <div class="row">
+        <span>Temperature</span>
+        <span id="temperature">Loading...</span>
+      </div>
+      <div class="row">
+        <span>RealFeel®</span>
+        <span id="realFeel">Loading...</span>
+      </div>
+      <div class="row">
+        <span>RealFeel Shade™</span>
+        <span id="realFeelShade">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Condition</span>
+        <span id="condition">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Max UV Index</span>
+        <span id="uvIndex">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Wind -->
+    <div class="weather-section">
+      <h2>Wind</h2>
+      <div class="row">
+        <span>Wind Speed</span>
+        <span id="windSpeed">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Wind Gusts</span>
+        <span id="windGusts">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Precipitation -->
+    <div class="weather-section">
+      <h2>Precipitation</h2>
+      <div class="row">
+        <span>Probability</span>
+        <span id="precipitationProb">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Thunderstorms</span>
+        <span id="thunderstorms">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Amount</span>
+        <span id="precipitationAmount">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Cloud Cover</span>
+        <span id="cloudCover">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Daily Forecast -->
+    <div class="weather-section">
+      <h2>Daily Forecast</h2>
+      <div id="dailyForecast"></div>
+    </div>
+
+    <!-- Sun & Moon -->
+    <div class="weather-section">
+      <h2>Sun & Moon</h2>
+      <div class="row">
+        <span>Daylight</span>
+        <span id="daylight">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Sunrise</span>
+        <span id="sunrise">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Sunset</span>
+        <span id="sunset">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Moon Phase</span>
+        <span id="moonPhase">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Moonrise</span>
+        <span id="moonrise">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Moonset</span>
+        <span id="moonset">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Temperature History -->
+    <div class="weather-section">
+      <h2>Temperature History</h2>
+      <div class="row">
+        <span>Today</span>
+        <span id="todayTemp">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Average</span>
+        <span id="averageTemp">Loading...</span>
+      </div>
+      <div class="row">
+        <span>Last Year</span>
+        <span id="lastYearTemp">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    fetch('weather-data.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('location').textContent = data.location;
+        document.getElementById('date').textContent = data.date;
+        document.getElementById('weather-icon').textContent = getWeatherEmoji(data.condition);
+
+        document.getElementById('temperature').textContent = `${data.temperature.current}°C (Hi)`;
+        document.getElementById('realFeel').textContent = `${data.temperature.realFeel}°C`;
+        document.getElementById('realFeelShade').textContent = `${data.temperature.realFeelShade}°C`;
+        document.getElementById('condition').textContent = `${data.condition} ${getWeatherEmoji(data.condition)}`;
+        document.getElementById('uvIndex').textContent = `${data.temperature.uvIndex} (${data.temperature.uvCategory}) ☀️`;
+
+        document.getElementById('windSpeed').textContent = `${data.wind.speed} 🌬️`;
+        document.getElementById('windGusts').textContent = `${data.wind.gusts} 💨`;
+
+        document.getElementById('precipitationProb').textContent = `${data.precipitation.probability}% 🌧️`;
+        document.getElementById('thunderstorms').textContent = `${data.precipitation.thunderstorms}% ⚡`;
+        document.getElementById('precipitationAmount').textContent = `${data.precipitation.amount} 💧`;
+        document.getElementById('cloudCover').textContent = `${data.precipitation.cloudCover}% ☁️`;
+
+        const dailyForecast = document.getElementById('dailyForecast');
+        data.dailyForecast.forEach(forecast => {
+          const row = document.createElement('div');
+          row.className = 'row';
+          row.innerHTML = `
+            <span>${forecast.time}</span>
+            <span>${forecast.temperature}°C, RealFeel® ${forecast.realFeel}°C, ${forecast.condition} ${getWeatherEmoji(forecast.condition)}</span>
+          `;
+          dailyForecast.appendChild(row);
+        });
+
+        document.getElementById('daylight').textContent = `${data.sunMoon.daylight} ☀️`;
+        document.getElementById('sunrise').textContent = `${data.sunMoon.sunrise} 🌅`;
+        document.getElementById('sunset').textContent = `${data.sunMoon.sunset} 🌇`;
+        document.getElementById('moonPhase').textContent = `${data.sunMoon.moonPhase} 🌔`;
+        document.getElementById('moonrise').textContent = `${data.sunMoon.moonrise} 🌕`;
+        document.getElementById('moonset').textContent = `${data.sunMoon.moonset} 🌑`;
+
+        document.getElementById('todayTemp').textContent = `High: ${data.temperatureHistory.today.high}°C, Low: ${data.temperatureHistory.today.low}°C 📊`;
+        document.getElementById('averageTemp').textContent = `High: ${data.temperatureHistory.average.high}°C, Low: ${data.temperatureHistory.average.low}°C 📈`;
+        document.getElementById('lastYearTemp').textContent = `High: ${data.temperatureHistory.lastYear.high}°C, Low: ${data.temperatureHistory.lastYear.low}°C 📅`;
+        setBackgroundColor(data.condition);
+      });
+
+    function getWeatherEmoji(condition) {
+      switch (condition.toLowerCase()) {
+        case 'sunny':
+          return '☀️';
+        case 'cloudy':
+          return '☁️';
+        case 'rainy':
+          return '🌧️';
+        case 'hazy sunshine':
+          return '🌤️';
+        case 'clear':
+          return '🌙';
+        case 'partly cloudy':
+          return '🌥️';
+        default:
+          return '🌤️';
+      }
+    }
+
+    function setBackgroundColor(condition) {
+      const body = document.body;
+      switch (condition.toLowerCase()) {
+        case 'sunny':
+          body.style.backgroundColor = '#FFD700'; 
+          break;
+        case 'cloudy':
+          body.style.backgroundColor = '#A9A9A9'; 
+          break;
+        case 'rainy':
+          body.style.backgroundColor = '#4682B4'; 
+          break;
+        case 'hazy sunshine':
+          body.style.backgroundColor = '#D3D3D3'; 
+          break;
+        default:
+          body.style.backgroundColor = '#87CEEB'; 
+      }
+    }
+
+    function login() {
+      alert('Login functionality coming soon!');
+    }
+  </script>
+</body>
+</html>

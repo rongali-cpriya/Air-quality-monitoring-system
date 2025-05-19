@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Added a wrapper to ensure the component takes full space */
+.login-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.login-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.login-section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000, #000dff, #000);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.login-section span {
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #181818;
+  z-index: 2;
+  transition: 1.5s;
+}
+
+.login-section span:hover {
+  background: #000dff;
+  transition: 0s;
+}
+
+.login-section .signin {
+  position: absolute;
+  width: 420px; /* Slightly wider for better spacing */
+  background: #222;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+  /* Centering the login form properly */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-section .signin .content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px; /* Reduced from 40px to bring elements closer together */
+}
+
+/* Center align the title */
+.login-title {
+  font-size: 2em;
+  color: #07a4ff;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+.login-section .signin .content .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Increased spacing between form elements */
+}
+
+.login-section .signin .content .form .inputBox {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px; /* Added space below input boxes */
+}
+
+.login-section .signin .content .form .inputBox input {
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.login-section .signin .content .form .inputBox i {
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.login-section .signin .content .form .inputBox input:focus ~ i,
+.login-section .signin .content .form .inputBox input:valid ~ i {
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.login-section .signin .content .form .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Changed from space-between to align left */
+  margin: 5px 0 15px; /* Added more space around links */
+}
+
+.login-section .signin .content .form .links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-section .signin .content .form .links a:nth-child(2) {
+  color: #000dff;
+  font-weight: 600;
+}
+
+/* Added extra spacing before the submit button */
+.submit-box {
+  margin-top: 10px;
+}
+
+.login-section .signin .content .form .inputBox input[type="submit"] {
+  padding: 12px; /* Slightly more padding for the button */
+  background: #0009b8;
+  color: #1acfc8;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin-top: 10px; /* Added space above button */
+}
+
+.login-section .signin .content .form .inputBox input[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-section .signin .content .form .inputBox input[type="submit"]:active {
+  opacity: 0.6;
+}
+
+.error {
+  color: red;
+  margin: 10px 0;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(34, 34, 34, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  z-index: 1001;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #333;
+  border-top: 4px solid #000dff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ensure grid looks good on different screen sizes */
+@media (max-width: 900px) {
+  .login-section span {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
+  }
+}
+
+@media (max-width: 600px) {
+  .login-section span {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+  }
+
+  .login-section .signin {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Add this to your existing Login.css file */
+.success-message {
+  color: #4CAF50;
+  background-color: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4CAF50;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Update .links to support both links */
+.login-section .signin .content .form .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Changed back to space-between for two links */
+  margin: 5px 0 15px;
+}
+
+.login-section .signin .content .form .links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.login-section .signin .content .form .links a:hover {
+  color: #07a4ff;
+}
+
+.login-section .signin .content .form .links a:nth-child(2) {
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.login-section .signin .content .form .links a:nth-child(2):hover {
+  color: #07a4ff;
+}
